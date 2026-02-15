@@ -18,6 +18,7 @@ module TypeProf::Core
         end
       end
       return nil if rbs_comments.empty?
+      puts rbs_comments.inspect
       rbs_comments = rbs_comments.map {|line| line || "" }.join("\n")
       method_type = RBS::Parser.parse_method_type(rbs_comments)
       if method_type
